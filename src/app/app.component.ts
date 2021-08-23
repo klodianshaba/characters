@@ -5,8 +5,8 @@ import {CharacterModel} from "./shared/models/character.model";
 
 import  *  as  Characters  from  './configs/characters.json';
 import {Store} from "@ngrx/store";
-import {State} from "./reducers";
-import {loadCharacters} from "./actions/characters.actions";
+import {State} from "./state/reducers";
+import {loadCharacters} from "./state/actions/characters.actions";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

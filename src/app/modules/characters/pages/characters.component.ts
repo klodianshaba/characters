@@ -1,8 +1,8 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {Store} from "@ngrx/store";
-import {State} from "../../../reducers";
+import {State} from "../../../state/reducers";
 import {CharacterModel} from "../../../shared/models/character.model";
-import {selectAllCharacters , selectCharacterById} from "../../../selectors/characters.selectors";
+import {selectAllCharacters , selectCharacterById} from "../../../state/selectors/characters.selectors";
 
 @Component({
   selector: 'app-characters',
