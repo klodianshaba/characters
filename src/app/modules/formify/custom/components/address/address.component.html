@@ -1,0 +1,25 @@
+
+<form [formGroup]="formGroup" #form="ngForm" *ngIf="arrayModel">
+  <div>
+    <span class="label">{{arrayModel.label}}</span>
+    <span style="margin-left: 10px"> Add </span>
+    <button mat-icon-button (click)="addAddress()"><mat-icon>add</mat-icon></button>
+    <span>or delete</span>
+    <button mat-icon-button (click)="delete()"><mat-icon color="warn">delete</mat-icon></button>
+    <span>address group</span>
+  </div>
+  <div [formArrayName]="arrayModel.controlName" *ngFor="let item of arrayModel['controls']; let i = index;">
+    <div [formGroupName]="i">
+      <div class="address-content">
+        <formify-input formControlName="street" [fieldModel]="item.field('street')"></formify-input>
+        <formify-input formControlName="city" [fieldModel]="item.field('city')"></formify-input>
+        <formify-select formControlName="country" [fieldModel]="item.field('country')"></formify-select>
+        <formify-input formControlName="zip" [fieldModel]="item.field('zip')"></formify-input>
+      </div>
+    </div>
+  </div>
+  <button hidden #submit></button>
+</form>
+
+
+

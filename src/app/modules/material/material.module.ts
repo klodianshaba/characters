@@ -21,8 +21,6 @@ import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatProgressBarModule} from "@angular/material/progress-bar";
-
-
 @NgModule({
   declarations: [],
   imports: [

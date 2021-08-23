@@ -1,0 +1,25 @@
+
+<form [formGroup]="formGroup" #ngForm="ngForm" (ngSubmit)="onSubmit()" (keypress)="onKeyPressAddContactForm($event)" [ngClass]="{'loading-form':loading}">
+  <ng-template #recursiveList let-list="controls">
+      <span *ngFor="let control of list" [ngSwitch]="control.controlType">
+        <ng-container *ngSwitchCase="controlTypes.formField">
+          <formify-input *ngIf="control.fieldType === fieldTypes.input " [formControl]="control.formControl" [fieldModel]="control" (onPrefix)="handlePrefix($event)"></formify-input>
+          <formify-select *ngIf="control.fieldType === fieldTypes.select" [formControl]="control.formControl" [fieldModel]="control"></formify-select>
+          <formify-radio *ngIf="control.fieldType === fieldTypes.radio" [formControl]="control.formControl" [fieldModel]="control"></formify-radio>
+          <formify-checkbox *ngIf="control.fieldType === fieldTypes.checkbox" [formControl]="control.formControl" [fieldModel]="control"></formify-checkbox>
+          <formify-textarea *ngIf="control.fieldType === fieldTypes.textarea" [formControl]="control.formControl" [fieldModel]="control"></formify-textarea>
+          <formify-toggle *ngIf="control.fieldType === fieldTypes.toggle" [formControl]="control.formControl" [fieldModel]="control"></formify-toggle>
+        </ng-container>
+        <ng-container *ngSwitchCase="controlTypes.formGroup">
+          <span class="label">{{control.label}}</span>
+          <ng-container *ngTemplateOutlet="recursiveList;context: {controls:control.controls}" ></ng-container>
+        </ng-container>
+        <ng-container *ngSwitchCase="controlTypes.formArray">
+          <span class="label">{{control.label}}</span>
+          <ng-container *ngTemplateOutlet="recursiveList;context: {controls:control.controls}" ></ng-container>
+        </ng-container>
+      </span>
+  </ng-template>
+  <ng-container *ngTemplateOutlet="recursiveList; context: {controls:controls}"></ng-container>
+  <formify-submit [submit]="submit"> </formify-submit>
+</form>
