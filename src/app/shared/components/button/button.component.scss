@@ -1,0 +1,52 @@
+@import "src/assets/scss/partials/variables";
+.card {
+  all: unset;
+  border-radius: 4px;
+  border: 1px solid #eee;
+  background-color: #fafafa;
+  height: 40px;
+  width: 200px;
+  margin: 0 8px 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  line-height: 24px;
+
+  .mat-icon{
+    margin-right: 10px;
+  }
+  svg{
+    margin-left: 10px;
+  }
+}
+
+.card:not(.highlight-card) {
+  cursor: pointer;
+}
+
+.card:not(.highlight-card):hover {
+  transform: translateY(-3px);
+  box-shadow: $shadow;
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+}
+
+a, a:visited, a:hover {
+  color: #1976d2;
+  text-decoration: none;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: map_get($breakpoints, md)) {
+  *:not(.circle-link) ,
+  .terminal {
+    width: auto;
+  }
+  .card:not(.highlight-card) {
+    height: 16px;
+    margin: 8px 0;
+  }
+}

@@ -1,0 +1,26 @@
+@import "src/assets/scss/partials/variables";
+.toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #eee;
+  font-weight: 600;
+  box-shadow: $shadow;
+  > span {
+    font-size: map_get($size, large);
+  }
+  img {
+    margin: 0 16px;
+  }
+  .spacer {
+    flex: 1;
+  }
+}
+
+
+
+
