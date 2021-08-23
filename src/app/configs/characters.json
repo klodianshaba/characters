@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "name": "body",
     "role": "fire",
     "description": "just be",
@@ -12,6 +13,7 @@
 
   },
   {
+    "id": 2,
     "name": "somebody",
     "role": "fire",
     "description": "just be strong",

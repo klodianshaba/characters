@@ -2,7 +2,7 @@ import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {State} from "../../../reducers";
 import {CharacterModel} from "../../../shared/models/character.model";
-import {selectAllCharacters} from "../../../selectors/characters.selectors";
+import {selectAllCharacters , selectCharacterById} from "../../../selectors/characters.selectors";
 
 @Component({
   selector: 'app-characters',
@@ -12,21 +12,24 @@ import {selectAllCharacters} from "../../../selectors/characters.selectors";
 })
 export class CharactersComponent implements OnInit {
   public characters: CharacterModel[] = [];
+  public character: CharacterModel = new CharacterModel();
   constructor(private store: Store<State>) {
-    // this.store.select(state => state.characters).subscribe(result => {
-    //   if(result.characters){
-    //     this.characters = result.characters;
-    //   }
-    // })
 
     this.store.select(selectAllCharacters).subscribe( characters => {
         if(characters){
           this.characters = characters;
         }
     })
+
+    this.store.select(selectCharacterById(2)).subscribe( character => {
+      if(character){
+        this.character = character;
+      }
+    })
   }
 
   ngOnInit(): void {
+    console.log(this.character);
   }
 
 }

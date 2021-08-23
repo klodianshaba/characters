@@ -1,6 +1,7 @@
 import {DateService} from "../../core/services/date.service";
 
 export interface CharacterInterface {
+  id: number;
   name: string;
   role: string;
   description: string;
@@ -14,6 +15,7 @@ export interface CharacterInterface {
 
 
 export class CharacterModel{
+  id: number | null;
   name: string | null;
   role: string | null;
   description: string | null;
@@ -25,6 +27,7 @@ export class CharacterModel{
   avatar: string | null;
 
   constructor(private character?: CharacterInterface) {
+    this.id = null;
     this.name = null;
     this.role = null;
     this.description = null;
