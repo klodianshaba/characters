@@ -29,7 +29,6 @@ export class CharactersComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.character);
   }
 
 }
