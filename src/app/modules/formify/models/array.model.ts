@@ -18,7 +18,7 @@ export class ArrayModel extends FormifyGenerate implements FormifyAccessibility{
   readonly controlType: ControlTypes;
   change: BehaviorSubject<any>;
   label: string;
-  public submit: SubmitModel;
+  public submit: SubmitModel = new SubmitModel();
   constructor( config: ArrayState ) {
     super();
     this.formArray = null;

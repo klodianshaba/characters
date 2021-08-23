@@ -1,4 +1,5 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {FormifyModel} from "../../formify/models";
 
 @Component({
   selector: 'app-add-character',
@@ -8,7 +9,15 @@ import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 })
 export class AddCharacterComponent implements OnInit {
 
-  constructor() { }
+  // public formify: FormifyModel = new FormifyModel({
+  //   controls: [
+  //
+  //   ],
+  //   submit: { text: 'Save'}
+  // });
+  constructor() {
+
+  }
 
   ngOnInit(): void {
   }
