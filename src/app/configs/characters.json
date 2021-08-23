@@ -1,5 +1,28 @@
 [
-  {}
+  {
+    "name": "body",
+    "role": "fire",
+    "description": "just be",
+    "age": 22,
+    "personality": "strong",
+    "skills": "fire and on top",
+    "date": "sdfsdf",
+    "creator": "klodian",
+    "avatar": "assets/images/klo.png"
+
+  },
+  {
+    "name": "somebody",
+    "role": "fire",
+    "description": "just be strong",
+    "age": 25,
+    "personality": "strong",
+    "skills": "fire and on top",
+    "date": "weeee",
+    "creator": "gentian",
+    "avatar": "assets/images/gen.png"
+
+  }
 ]
 
 

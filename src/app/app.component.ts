@@ -1,7 +1,12 @@
 import { Component } from '@angular/core';
 import {DateService} from "./core/services/date.service";
 import {CharacterModel} from "./shared/models/character.model";
+// import characters from 'configs/characters.json';
 
+import  *  as  Characters  from  './configs/characters.json';
+import {Store} from "@ngrx/store";
+import {State} from "./reducers";
+import {loadCharacters} from "./actions/character.actions";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,6 +14,8 @@ import {CharacterModel} from "./shared/models/character.model";
 })
 export class AppComponent {
   title = 'characters';
-  constructor() {
+  public characters: CharacterModel[] = (Characters as any).default;
+  constructor(private store: Store<State>) {
+    this.store.dispatch(loadCharacters({characters: this.characters}))
   }
 }
