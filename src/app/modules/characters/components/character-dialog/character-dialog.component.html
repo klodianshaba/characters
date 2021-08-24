@@ -1,0 +1,15 @@
+<app-dialog #dialog [config]="dialogConfig" (onHide)="onHide()" >
+  <div header class="title"> <strong>Character</strong> </div>
+  <div body>
+  </div>
+  <div footer>
+    <button mat-stroked-button class="button" color="primary" (click)="dialog.hide()">
+      <mat-icon>cancel</mat-icon>
+      Discard
+    </button>
+    <button mat-flat-button class="button confirm-button" color="primary" (click)="onClickConfirm()">
+      <mat-icon>check</mat-icon>
+      Confirm
+    </button>
+  </div>
+</app-dialog>
