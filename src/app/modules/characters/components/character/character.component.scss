@@ -1,0 +1,30 @@
+@import "src/assets/scss/partials/variables";
+
+.character-content {
+  width: 100px;
+  padding: map_get($padding, all);
+  border: 1px solid $border-color;
+  border-radius: 5px;
+  img{
+    width: 100px; height: 100px; border-radius: 100%;
+    border: 1px solid $border-color;
+  }
+  .name{
+    font-size: map_get($size,large);
+  }
+}
+
+/* Responsive Styles */
+@media screen and (max-width: map_get($breakpoints, sm)) {
+  .character-content{
+    width: auto;
+    display: flex;
+    align-items: center;
+
+    .details{
+      text-align: left;
+      padding: map_get($padding,left-right);
+    }
+  }
+}
+

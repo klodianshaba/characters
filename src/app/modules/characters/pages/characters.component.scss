@@ -1,0 +1,32 @@
+@import "src/assets/scss/partials/variables";
+.characters{
+  text-align: center;
+  .character{
+    text-align: center;
+    //margin-top: 10px;
+    //margin-bottom: 20px;
+    margin: 10px;
+    display: inline-block;
+    border-radius: 5px;
+  }
+  .character:hover{
+    transition: 0.3s;
+    transform: translateY(-3px);
+    box-shadow: $shadow;
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+  }
+}
+/* Responsive Styles */
+@media screen and (max-width: map_get($breakpoints, sm)) {
+  .characters{
+
+    .character{
+      margin: 0;
+      display: block;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+  }
+}
+

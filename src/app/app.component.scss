@@ -42,7 +42,11 @@ svg#clouds {
 }
 
 /* Responsive Styles */
-@media screen and (max-width: map_get($breakpoints, md)) {
+@media screen and (max-width: map_get($breakpoints, sm)) {
+
+  .content{
+    align-items: unset;
+  }
   .button-container > *:not(.circle-link) ,
   .terminal {
     width: 100%;

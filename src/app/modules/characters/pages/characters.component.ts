@@ -12,7 +12,6 @@ import {selectAllCharacters , selectCharacterById} from "../../../state/selector
 })
 export class CharactersComponent implements OnInit {
   public characters: CharacterModel[] = [];
-  public character: CharacterModel = new CharacterModel();
   constructor(private store: Store<State>) {
 
     this.store.select(selectAllCharacters).subscribe( characters => {
@@ -21,14 +20,18 @@ export class CharactersComponent implements OnInit {
         }
     })
 
-    this.store.select(selectCharacterById(2)).subscribe( character => {
-      if(character){
-        this.character = character;
-      }
-    })
+    // this.store.select(selectCharacterById(2)).subscribe( character => {
+    //   if(character){
+    //     this.character = character;
+    //   }
+    // })
   }
 
   ngOnInit(): void {
+  }
+
+  trackByFnCharacters(index: number, item: CharacterModel){
+    return index;
   }
 
 }

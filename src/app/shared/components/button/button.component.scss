@@ -40,7 +40,7 @@ a, a:visited, a:hover {
 }
 
 /* Responsive Styles */
-@media screen and (max-width: map_get($breakpoints, md)) {
+@media screen and (max-width: map_get($breakpoints, sm)) {
   *:not(.circle-link) ,
   .terminal {
     width: auto;

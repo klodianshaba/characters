@@ -1,16 +1,8 @@
-<p>characters works!</p>
-<div *ngFor="let character of characters">
-  {{character.name}}
+<div class="characters">
+  <div class="character" *ngFor="let character of characters; trackBy: trackByFnCharacters">
+    <app-character [character]="character"></app-character>
+  </div>
 </div>
 
-<!--<div class="container">-->
-<!--  <div class="row">-->
-<!--    <div class="col-md-5">-->
-<!--&lt;!&ndash;      <img src="Images/logo.png" class="img-fluid"/>&ndash;&gt;-->
-<!--    </div>-->
-<!--    <div class="col-md-7">-->
-<!--      Right Header Div-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
+
 
