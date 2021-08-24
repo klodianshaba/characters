@@ -1,0 +1,113 @@
+
+@import "src/assets/scss/partials/variables";
+
+@import "functions";
+
+// media mixins .................
+
+@mixin desktop { // just desktop
+  @media (min-width: #{map_get($breakpoints,xl)}){
+    @content;
+  }
+}
+
+@mixin laptop{ // laptop and desktop
+  @media (min-width: #{map_get($breakpoints,lg)}) and (max-width: #{map_get($breakpoints,xl) - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet{ // tablet and ipad
+  @media (min-width: #{map_get($breakpoints,md)}) and (max-width: #{map_get($breakpoints,lg) - 1px} ) {
+    @content;
+  }
+}
+
+@mixin phone{ // phone and tablet
+  @media (max-width: #{map_get($breakpoints,sm)}) and (max-width: #{map_get($breakpoints,md) - 1px} ) {
+    @content;
+  }
+}
+
+// end media mixins
+
+// theme mixins .....................
+
+@mixin color($theme , $property-name){
+  color: color($theme, $property-name);
+}
+
+@mixin background($theme , $property-name){
+  background-color:background($theme, $property-name);
+}
+
+@mixin padding($property-name){
+
+  @if $property-name{
+    padding: padding($padding , $property-name );
+  }
+
+  @else{
+    padding: padding($padding ,all);
+  }
+
+}
+
+@mixin border($theme , $property-name:false){
+  @content;
+  @if $property-name{
+    border-color: color($theme, $property-name);
+  }
+  @else{
+    border-color: color($theme, border);
+  }
+}
+
+//end theme mixins ..............................
+
+@mixin cursor-pointer(){
+  cursor: pointer;
+}
+@mixin cursor-notAllowed(){
+  cursor: not-allowed;
+}
+
+@mixin absolute-center(){
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+@mixin flex-center(){
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+@mixin hover-content($background){
+  &:hover:before {
+    content: '';
+    position: absolute;
+    z-index: 1 !important;
+    width: 100%;
+    height: 100%;
+    background: $background;
+    pointer-events: none;
+    @content;
+  }
+}
+
+
+
+
