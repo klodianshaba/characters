@@ -1,0 +1,45 @@
+
+
+<div mat-dialog-content>
+
+  <ng-template #template>
+
+    <div #dialogElement class="position-relative h-100" >
+
+      <div #headerElement class="modal-header title border_bottom" [ngClass]="{'overlay-header':config.overlayHeader, 'hidden-header':!config.header}">
+
+        <span *ngIf="config.header &&  status | async" class="w-100">
+
+          <ng-content select="[header]"></ng-content>
+
+        </span>
+
+      </div>
+
+      <div [ngClass]="{'hide-body-padding':!config.padding}" [ngStyle]="getBodyStyle()" class="modal-body custom-scrollbar transition">
+
+        <span *ngIf="status | async">
+
+            <ng-content select="[body]"></ng-content>
+
+        </span>
+
+      </div>
+
+      <div #footerElement class="modal-footer  d-block border_top"  [ngClass]="{'overlay-footer':config.overlayFooter , 'hidden-footer':!config.footer}">
+
+        <span *ngIf="config.footer &&  status | async">
+
+          <ng-content select="[footer]"></ng-content>
+
+        </span>
+
+      </div>
+
+    </div>
+
+  </ng-template>
+
+</div>
+
+
