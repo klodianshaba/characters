@@ -15,16 +15,16 @@ export interface CharacterInterface {
 
 
 export class CharacterModel{
-  id: number | null;
-  name: string | null;
-  role: string | null;
-  description: string | null;
-  age: number | null;
-  personality: string | null;
-  skills: string | null;
-  createdAt: Date | null;
-  creator: string | null;
-  avatar: string | null;
+  id: number;
+  name: string;
+  role: string;
+  description: string;
+  age: number ;
+  personality: string ;
+  skills: string ;
+  createdAt: Date ;
+  creator: string ;
+  avatar: string ;
 
   constructor(private character?: CharacterInterface) {
     this.id = null;
