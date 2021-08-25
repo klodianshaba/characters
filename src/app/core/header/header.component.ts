@@ -18,5 +18,8 @@ export class HeaderComponent implements OnInit {
   onNavigateAddCharacter(): void{
     this.router.navigate(['/add-character']).then();
   }
+  onGeta(): void{
+    this.onNavigateCharacters();
+  }
 
 }

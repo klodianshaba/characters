@@ -17,8 +17,6 @@ import {RadioComponent } from './components/radio/radio.component';
 import {ArrayControlComponent } from './components/array-control/array-control.component';
 import {GroupControlComponent } from './components/group-control/group-control.component';
 import {CheckboxComponent } from './components/checkbox/checkbox.component';
-import { DatepickerComponent } from './components/datepicker/datepicker.component';
-import { TagsComponent } from './components/tags/tags.component';
 import {TagifyModule} from "ngx-tagify";
 export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -37,8 +35,6 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
     ToggleComponent,
     RadioComponent,
     CheckboxComponent,
-    DatepickerComponent,
-    TagsComponent,
   ],
   imports: [
     CommonModule,
@@ -67,8 +63,6 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
     RadioComponent,
     CheckboxComponent,
     FormifyComponent,
-    DatepickerComponent,
-    TagsComponent,
   ],
 })
 export class FormifyModule { }

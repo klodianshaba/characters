@@ -13,3 +13,4 @@ export const selectCharacterById = (characterId: number ) => createSelector(
   selectCharacters,
   (state: CharactersState) => state.characters.find(character => character.id === characterId)
 );
+

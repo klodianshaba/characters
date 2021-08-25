@@ -1,7 +1,12 @@
+
 <div class="toolbar" role="banner">
-  <img width="40" alt="Geta Club Logo" src="../assets/images/geta-club.png"/>
-  <span><strong>Geta Club</strong></span>
+  <a href="javascript:">
+    <img (click)="onGeta()" width="40" alt="Geta Club Logo" src="assets/images/geta-club.png"/>
+  </a>
+  <span><strong (click)="onGeta()">Geta Club</strong></span>
   <div class="spacer"></div>
+  <div class="navigation-actions">
   <button mat-icon-button color="primary" (click)="onNavigateCharacters()"> <mat-icon>people</mat-icon></button>
   <button mat-icon-button color="primary" (click)="onNavigateAddCharacter()"> <mat-icon>person_add</mat-icon></button>
+  </div>
 </div>

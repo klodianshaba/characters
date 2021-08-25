@@ -1,1 +1,11 @@
-<p>avatar works!</p>
+
+<div class="avatar" (click)="onClickAvatar()" [ngClass]="{'avatar-reqired': required}">
+  <span *ngIf="isPreview()">
+    <img [src]="src" [ngClass]="{'loaded-avatar': loadedAvatar}" (load)="loadedAvatar = true">
+  </span>
+  <span *ngIf="isUpload()">
+    <mat-icon [ngClass]="{'avatar-icon-reqired': required}" *ngIf="!src">cloud_upload</mat-icon>
+    <img *ngIf="src" [src]="src" [ngClass]="{'loaded-avatar': loadedAvatar}" (load)="loadedAvatar = true">
+    <input #avatar hidden type="file" id="file" (change)="handleFileInput($event)">
+  </span>
+</div>

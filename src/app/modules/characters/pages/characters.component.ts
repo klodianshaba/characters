@@ -18,7 +18,6 @@ export class CharactersComponent implements OnInit {
           this.characters = characters;
         }
     })
-
     // this.store.select(selectCharacterById(2)).subscribe( character => {
     //   if(character){
     //     this.character = character;

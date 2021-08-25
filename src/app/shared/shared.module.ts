@@ -7,9 +7,10 @@ import { AngularResizedEventModule } from 'angular-resize-event';
 import { ConfirmDialogComponent } from "./components/confirm-dialog/confirm-dialog.component";
 import { DialogModule } from "../modules/dialog/dialog.module";
 import { AvatarComponent } from './components/avatar/avatar.component';
+import { DirectionComponent } from './components/direction/direction.component';
 
 @NgModule({
-  declarations: [ButtonComponent ,ConfirmDialogComponent, AvatarComponent],
+  declarations: [ButtonComponent ,ConfirmDialogComponent, AvatarComponent, DirectionComponent],
   imports: [
     CommonModule,
     MaterialModule,
@@ -20,7 +21,9 @@ import { AvatarComponent } from './components/avatar/avatar.component';
   exports: [
     ButtonComponent,
     AngularResizedEventModule,
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
+    AvatarComponent,
+    DirectionComponent
   ]
 })
 export class SharedModule { }

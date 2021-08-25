@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TagsComponent } from './tags.component';
+import { ViewtifyCharacterComponent } from './viewtify-character.component';
 
-describe('TagsComponent', () => {
-  let component: TagsComponent;
-  let fixture: ComponentFixture<TagsComponent>;
+describe('AddEditCharacterComponent', () => {
+  let component: ViewtifyCharacterComponent;
+  let fixture: ComponentFixture<ViewtifyCharacterComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TagsComponent ]
+      declarations: [ ViewtifyCharacterComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TagsComponent);
+    fixture = TestBed.createComponent(ViewtifyCharacterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

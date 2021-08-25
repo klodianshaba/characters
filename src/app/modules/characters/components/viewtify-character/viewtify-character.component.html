@@ -1,0 +1,31 @@
+
+<div class="add-character-content">
+  <div *ngIf="isAdd() || isEdit()">
+    <form [formGroup]="formify.formGroup" #form="ngForm" (ngSubmit)="onSubmit()" [ngClass]="{'loading-form': formify.submit.loading}">
+      <div class="avatar-content">
+        <formify-input formControlName="name" [fieldModel]="formify.field('name')"></formify-input>
+        <app-avatar [src]="isEdit() ? character.avatar : null " [direction]="AvatarDirection.upload" [required]="formify.formGroup.get('avatar').invalid && form.submitted" (onPath)="onAvatarPathSelected($event)"></app-avatar>
+      </div>
+      <formify-select formControlName="role" [fieldModel]="formify.field('role')"></formify-select>
+      <formify-textarea formControlName="description" [fieldModel]="formify.field('description')"></formify-textarea>
+      <div class="flex-content">
+        <formify-input formControlName="age" [fieldModel]="formify.field('age')"></formify-input>
+        <formify-select formControlName="personality" [fieldModel]="formify.field('personality')"></formify-select>
+      </div>
+      <div class="flex-content">
+        <formify-input formControlName="creator" [fieldModel]="formify.field('creator')"></formify-input>
+        <tagify name="skills" formControlName="skills" inputClass="form-control"
+                [ngClass]="{'invalid-tagify':formify.formGroup.get('skills').invalid && form.submitted}"
+                [settings]="settings"
+                [whitelist]="whitelist$"
+                [readonly]="readonly"
+        >
+        </tagify>
+      </div>
+      <formify-submit [submit]="formify.submit"></formify-submit>
+    </form>
+  </div>
+  <div *ngIf="isView()">
+    View
+  </div>
+</div>

@@ -1,0 +1,31 @@
+@import "src/assets/scss/partials/variables";
+@import "src/assets/scss/partials/mixins";
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  background-color: #eee;
+  border:1px solid $border-color;
+  position: relative;
+  @include cursor-pointer;
+  .mat-icon{
+    @include absolute-center;
+  }
+  img{
+    width: 100px; height: 100px; border-radius: 100%;
+    border: 1px solid $border-color;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0;
+  }
+  .loaded-avatar{
+    transition: 0.3s;
+    opacity: 1;
+  }
+}
+.avatar-reqired{
+  border:1px solid red;
+}
+.avatar-icon-reqired{
+  color: red;
+}

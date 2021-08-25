@@ -1,0 +1,16 @@
+@import "src/assets/scss/partials/mixins";
+.title{
+  display: flex;
+  justify-content: space-between;
+  .mat-icon{
+    @include cursor-pointer;
+  }
+  strong{
+    font-size: map_get($size, large);
+  }
+  .buttons{
+    position: relative;
+    top: -10px;
+    right: -10px;
+  }
+}

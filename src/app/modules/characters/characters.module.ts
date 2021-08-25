@@ -7,19 +7,27 @@ import { MaterialModule } from "../material/material.module";
 import { DialogModule } from "../dialog/dialog.module";
 import { SharedModule } from "../../shared/shared.module";
 import { CharacterDialogComponent } from './components/character-dialog/character-dialog.component';
-
+import { ViewtifyCharacterComponent } from './components/viewtify-character/viewtify-character.component';
+import {FormifyModule} from "../formify/formify.module";
+import {TagifyModule} from "ngx-tagify";
 @NgModule({
   declarations: [
     CharactersComponent,
     CharacterComponent,
-    CharacterDialogComponent
+    CharacterDialogComponent,
+    ViewtifyCharacterComponent
   ],
   imports: [
     CommonModule,
     CharactersRoutingModule,
     MaterialModule,
     DialogModule,
-    SharedModule
+    SharedModule,
+    FormifyModule,
+    TagifyModule.forRoot(),
+  ],
+  exports: [
+    ViewtifyCharacterComponent
   ]
 })
 export class CharactersModule { }

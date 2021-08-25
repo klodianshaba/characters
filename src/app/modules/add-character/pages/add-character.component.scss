@@ -1,10 +1,2 @@
-@import "src/assets/scss/partials/variables";
-.add-character-content{
-  width: 480px;
-}
-/* Responsive Styles */
-@media screen and (max-width: map_get($breakpoints, sm)) {
-  .add-character-content{
-    width: auto;
-  }
-}
+
+

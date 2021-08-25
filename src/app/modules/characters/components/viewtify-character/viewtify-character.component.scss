@@ -1,6 +1,27 @@
 @import "src/assets/scss/partials/variables";
 @import "src/assets/scss/partials/functions";
 @import "src/assets/scss/partials/mixins";
+.add-character-content{
+  width: 480px;
+  .avatar-content{
+    display: flex;
+    justify-content: space-between;
+    formify-input{
+      width: calc(100% - 130px);
+    }
+  }
+  .flex-content{
+    display: flex;
+    justify-content: space-between;
+    formify-input, formify-select, tagify{
+      width: calc( 50% - 10px );
+    }
+  }
+  ::ng-deep .tagify{
+    margin-bottom: 10px;
+  }
+}
+
 .full-width {
   width: 100%;
 }
@@ -14,6 +35,11 @@
 
 .tags-content{
   padding: map_get($padding,bottom);
+}
+
+::ng-deep.mat-form-field-underline {
+  /*change color of underline*/
+  background-color: $border-color !important;
 }
 
 ::ng-deep .organization-hashtags-content .tagify__input{
@@ -37,4 +63,9 @@
   }
   border-bottom:1px solid red;
 }
-
+/* Responsive Styles */
+@media screen and (max-width: map_get($breakpoints, sm)) {
+  .add-character-content{
+    width: auto;
+  }
+}

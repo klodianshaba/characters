@@ -1,17 +1,12 @@
-import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild} from '@angular/core';
 import {DialogComponent} from "../../../dialog/dialog.component";
 import {DialogConfig} from "../../../dialog/models";
 import {ToastrService} from "ngx-toastr";
 import {Store} from "@ngrx/store";
 import {State} from "../../../../state/reducers";
 import {CharacterModel} from "../../../../shared/models/character.model";
-import {editCharacter} from "../../../../state/actions/characters.actions";
-export enum CharacterDialogDirections {
-  edit = 'edit',
-  profile = 'profile'
-}
-
-export type CharacterDialogType = CharacterDialogDirections.edit | CharacterDialogDirections.profile;
+import {deleteCharacter, editCharacter} from "../../../../state/actions/characters.actions";
+import {CharacterDirections} from "../viewtify-character/viewtify-character.component";
 
 @Component({
   selector: 'app-character-dialog',
@@ -21,20 +16,16 @@ export type CharacterDialogType = CharacterDialogDirections.edit | CharacterDial
 export class CharacterDialogComponent implements OnInit {
 
   @ViewChild('dialog' , { static: true }) dialog: DialogComponent;
-
-  @Input('direction') direction: CharacterDialogType = CharacterDialogDirections.edit;
-
+  @Input('direction') direction: CharacterDirections = CharacterDirections.view;
   @Input('character') character: CharacterModel;
-
+  @Input('displayActions') displayActions: boolean = true;
   @Input('status') set onStatus(status: boolean) { (status)?  this.dialog.show(): null }
-
   @Output() statusChange = new EventEmitter();
-
   @Output() onEdit: EventEmitter<CharacterModel> = new EventEmitter();
-
   public dialogConfig: DialogConfig = { padding: false};
+  public CharacterDirections = CharacterDirections;
 
-  constructor(private toast: ToastrService , private store: Store<State>) {}
+  constructor(private toastr: ToastrService , private store: Store<State>) {}
 
   ngOnInit() {}
 
@@ -43,10 +34,10 @@ export class CharacterDialogComponent implements OnInit {
   }
 
   isEdit(): boolean{
-    return (this.direction === CharacterDialogDirections.edit)
+    return (this.direction === CharacterDirections.edit)
   }
-  isProfile(): boolean{
-    return (this.direction === CharacterDialogDirections.profile)
+  isView(): boolean{
+    return (this.direction === CharacterDirections.view)
   }
 
   onEditCharacter(): void {
@@ -54,4 +45,21 @@ export class CharacterDialogComponent implements OnInit {
     this.onEdit.emit(this.character);
   }
 
+  onClickDeleteCharacter(): void{
+  }
+  onClickEditCharacter(): void{
+    this.direction = CharacterDirections.edit;
+  }
+  onClickVisibleCharacter(): void{
+    // this.direction = CharacterDirections.view;
+  }
+
+  onConfirmDelete(): void{
+    this.store.dispatch(deleteCharacter({id: this.character.id}))
+    this.toastr.success(this.character.name + ' deleted successfully', '' ,{
+      closeButton: true,
+      timeOut: 3000,
+      positionClass: 'toast-bottom-right'
+    });
+  }
 }

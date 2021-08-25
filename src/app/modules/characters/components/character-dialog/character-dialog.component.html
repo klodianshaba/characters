@@ -1,15 +1,20 @@
 <app-dialog #dialog [config]="dialogConfig" (onHide)="onHide()" >
-  <div header class="title"> <strong>Character</strong> </div>
+  <div header class="title">
+    <strong>{{character.name}}</strong>
+    <div class="buttons">
+      <span class="actions" *ngIf="displayActions">
+        <button mat-icon-button color="warn" (click)="onClickDeleteCharacter(); confirmDelete.dialog.show()"> <mat-icon >delete</mat-icon></button>
+        <button mat-icon-button color="primary" (click)="onClickEditCharacter()"> <mat-icon >edit</mat-icon></button>
+        <button mat-icon-button color="primary" (click)="onClickVisibleCharacter()"> <mat-icon >visibility</mat-icon></button>
+      </span>
+      <button mat-icon-button color="primary" (click)="dialog.hide()"> <mat-icon >close</mat-icon></button>
+    </div>
+  </div>
   <div body>
+    <app-viewtify-character [character]="character" [direction]="direction" (onUpdated)="dialog.hide()"></app-viewtify-character>
   </div>
   <div footer>
-    <button mat-stroked-button class="button" color="primary" (click)="dialog.hide()">
-      <mat-icon>cancel</mat-icon>
-      Discard
-    </button>
-    <button mat-flat-button class="button confirm-button" color="primary" (click)="onEditCharacter()">
-      <mat-icon>check</mat-icon>
-      Confirm
-    </button>
   </div>
 </app-dialog>
+
+<app-confirm-dialog #confirmDelete confirmButtonColor="warn" (onConfirm)="dialog.hide();confirmDelete.dialog.hide();onConfirmDelete()" [title]="'Would you like to delete '+ character.name + '?'"></app-confirm-dialog>

@@ -1,4 +1,5 @@
 import {DateService} from "../../core/services/date.service";
+import {SkillModel} from "./skill.model";
 
 export interface CharacterInterface {
   id: number;
@@ -7,10 +8,10 @@ export interface CharacterInterface {
   description: string;
   age: number;
   personality: string;
-  skills: string;
+  skills: SkillModel[];
   createdAt: Date;
   creator: string;
-  avatar: string;
+  avatar: string | ArrayBuffer;
 }
 
 
@@ -21,10 +22,10 @@ export class CharacterModel{
   description: string;
   age: number ;
   personality: string ;
-  skills: string ;
+  skills: SkillModel[];
   createdAt: Date ;
   creator: string ;
-  avatar: string ;
+  avatar: string | ArrayBuffer;
 
   constructor(private character?: CharacterInterface) {
     this.id = null;

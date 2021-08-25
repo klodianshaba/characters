@@ -1,0 +1,12 @@
+@import "src/assets/scss/partials/variables";
+.direction{
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  border-bottom: 1px solid $border-color;
+  align-items: center;
+  margin-bottom: 20px;
+  .title{
+    font-size: map_get($size,large);
+  }
+}
