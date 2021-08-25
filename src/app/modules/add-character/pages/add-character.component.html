@@ -1,1 +1,15 @@
-<p>add-character works!</p>
+
+<div class="add-character-content">
+  <form [formGroup]="formify.formGroup" #form="ngForm" (ngSubmit)="onSubmit()" [ngClass]="{'loading-form': formify.submit.loading}">
+    <formify-input formControlName="name" [fieldModel]="formify.field('name')"></formify-input>
+    <formify-select formControlName="role" [fieldModel]="formify.field('role')"></formify-select>
+    <formify-textarea formControlName="description" [fieldModel]="formify.field('description')"></formify-textarea>
+    <formify-input formControlName="age" [fieldModel]="formify.field('age')"></formify-input>
+    <formify-select formControlName="personality" [fieldModel]="formify.field('personality')"></formify-select>
+<!--    <formify-tags formControlName="skills" [fieldModel]="formify.field('skills')"></formify-tags>-->
+<!--    <formify-datepicker formControlName="date" [fieldModel]="formify.field('date')"></formify-datepicker>-->
+    <formify-input formControlName="creator" [fieldModel]="formify.field('creator')"></formify-input>
+    <formify-submit [submit]="formify.submit"></formify-submit>
+  </form>
+</div>
+

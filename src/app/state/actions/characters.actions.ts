@@ -6,6 +6,16 @@ export const loadCharacters = createAction(
   props<{characters:CharacterModel[]}>()
 );
 
+export const deleteCharacter = createAction(
+  '[Character] Delete Character',
+  props<{id: number}>()
+);
+
+export const editCharacter = createAction(
+  '[Character] Edit Character',
+  props<{character: CharacterModel}>()
+);
+
 export const loadCharactersSuccess = createAction(
   '[Character] Load Characters Success',
   props<{ data: any }>()

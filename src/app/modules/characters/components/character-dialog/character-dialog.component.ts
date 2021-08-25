@@ -4,6 +4,8 @@ import {DialogConfig} from "../../../dialog/models";
 import {ToastrService} from "ngx-toastr";
 import {Store} from "@ngrx/store";
 import {State} from "../../../../state/reducers";
+import {CharacterModel} from "../../../../shared/models/character.model";
+import {editCharacter} from "../../../../state/actions/characters.actions";
 export enum CharacterDialogDirections {
   edit = 'edit',
   profile = 'profile'
@@ -22,11 +24,13 @@ export class CharacterDialogComponent implements OnInit {
 
   @Input('direction') direction: CharacterDialogType = CharacterDialogDirections.edit;
 
+  @Input('character') character: CharacterModel;
+
   @Input('status') set onStatus(status: boolean) { (status)?  this.dialog.show(): null }
 
   @Output() statusChange = new EventEmitter();
 
-  @Output() onConfirm: EventEmitter<boolean> = new EventEmitter();
+  @Output() onEdit: EventEmitter<CharacterModel> = new EventEmitter();
 
   public dialogConfig: DialogConfig = { padding: false};
 
@@ -37,9 +41,6 @@ export class CharacterDialogComponent implements OnInit {
   onHide() {
     this.statusChange.emit(false);
   }
-  onClickConfirm(): void {
-    this.onConfirm.emit(true);
-  }
 
   isEdit(): boolean{
     return (this.direction === CharacterDialogDirections.edit)
@@ -49,7 +50,8 @@ export class CharacterDialogComponent implements OnInit {
   }
 
   onEditCharacter(): void {
-
+    this.store.dispatch(editCharacter({character: this.character}));
+    this.onEdit.emit(this.character);
   }
 
 }

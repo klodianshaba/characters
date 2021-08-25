@@ -2,6 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angula
 import {DialogComponent} from "../../../modules/dialog/dialog.component";
 import {DialogConfig} from "../../../modules/dialog/models";
 import {ToastrService} from "ngx-toastr";
+import {ThemePalette} from "@angular/material/core";
 
 @Component({
   selector: 'app-confirm-dialog',
@@ -14,7 +15,11 @@ export class ConfirmDialogComponent implements OnInit {
 
   @Input('title') title: string = 'Would you like to delete';
 
-  @Input('message') message: string = '';
+  @Input('message') message: string;
+
+  @Input('discardButtonColor') discardButtonColor: ThemePalette  = 'primary';
+
+  @Input('confirmButtonColor') confirmButtonColor: ThemePalette = 'primary';
 
   @Input('status') set onStatus(status: boolean) { (status)?  this.dialog.show(): null }
 

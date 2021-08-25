@@ -3,7 +3,7 @@ import {Validators} from '@angular/forms';
 export class NameFieldControl extends FieldModel {
   constructor(overwrite: FieldState  = {}) {
     const  field: FieldModel =  new FieldModel({
-      controlName: 'firstName',
+      controlName: 'name',
       label: 'Enter first name',
       placeholder: 'first name',
       autoComplete: 'off',

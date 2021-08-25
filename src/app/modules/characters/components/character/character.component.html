@@ -1,12 +1,14 @@
 
-<div class="character-content">
-  <img clas="avatar" src="{{character.avatar}}">
+<div class="character-content" (click)="onClickCharacter()">
+  <img clas="avatar" [ngClass]="{'loaded-avatar': loadedAvatar}" src="{{character.avatar}}" (load)="loadedAvatar = true">
   <div class="details">
     <div class="name"> <strong>{{character.name}}</strong></div>
     <div class="role">{{character.role}}</div>
   </div>
   <div class="actions">
-    <button mat-icon-button color="primary"><mat-icon>edit</mat-icon></button>
-    <button mat-icon-button color="warn"><mat-icon>delete</mat-icon></button>
+    <button mat-icon-button color="primary" (click)="onEditCharacter($event); characterProfile.dialog.show()"><mat-icon>edit</mat-icon></button>
+    <button mat-icon-button color="warn" (click)="onDeleteCharacter($event); confirmDelete.dialog.show()"><mat-icon>delete</mat-icon></button>
   </div>
 </div>
+<app-confirm-dialog #confirmDelete confirmButtonColor="warn" (onConfirm)="confirmDelete.dialog.hide();onConfirmDelete()" [title]="'Would you like to delete '+ character.name + '?'"></app-confirm-dialog>
+<app-character-dialog #characterProfile></app-character-dialog>

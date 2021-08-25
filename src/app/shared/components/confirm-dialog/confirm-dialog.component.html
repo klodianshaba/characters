@@ -4,11 +4,11 @@
   <div body>
   </div>
   <div footer>
-   <button mat-stroked-button class="button" color="primary" (click)="dialog.hide()">
+   <button mat-stroked-button class="button" [color]="discardButtonColor" (click)="dialog.hide()">
      <mat-icon>cancel</mat-icon>
      Discard
    </button>
-    <button mat-flat-button class="button confirm-button" color="primary" (click)="onClickConfirm()">
+    <button mat-flat-button class="button confirm-button" [color]="confirmButtonColor" (click)="onClickConfirm()">
       <mat-icon>check</mat-icon>
       Confirm
     </button>

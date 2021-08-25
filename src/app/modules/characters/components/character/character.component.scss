@@ -8,9 +8,24 @@
   img{
     width: 100px; height: 100px; border-radius: 100%;
     border: 1px solid $border-color;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0;
+  }
+  .loaded-avatar{
+    transition: 0.3s;
+    opacity: 1;
   }
   .name{
     font-size: map_get($size,large);
+  }
+  .details{
+    .role, .name{
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+    }
   }
 }
 
@@ -20,7 +35,6 @@
     width: auto;
     display: flex;
     align-items: center;
-
     .details{
       text-align: left;
       padding: map_get($padding,left-right);
