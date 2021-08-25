@@ -1,0 +1,40 @@
+@import "src/assets/scss/partials/variables";
+@import "src/assets/scss/partials/functions";
+@import "src/assets/scss/partials/mixins";
+.full-width {
+  width: 100%;
+}
+.error-icon{
+  color:red;
+}
+.dropDownIconInPrefix{
+  position: relative;
+  top: 6px;
+}
+
+.tags-content{
+  padding: map_get($padding,bottom);
+}
+
+::ng-deep .organization-hashtags-content .tagify__input{
+  //--placeholder-color: ;
+  --placeholder-color-focus: #673ab7;
+}
+
+::ng-deep .tagify{
+  --tags-border-color:empty;
+  --tags-focus-border-color:#673ab7;
+  border-bottom: 1px solid $border-color;
+}
+
+::ng-deep .tagify__tag > div{
+  border-radius: 10px;
+}
+
+::ng-deep .invalid-tagify .tagify{
+  .tagify__input::before{
+    color:  red;
+  }
+  border-bottom:1px solid red;
+}
+
