@@ -19,7 +19,8 @@ p {
 .content {
   display: flex;
   margin: 82px auto 32px;
-  padding: 0 16px;
+  padding: 0 16px 40px 16px;
+
   max-width: 960px;
   flex-direction: column;
   align-items: center;
@@ -31,14 +32,6 @@ p {
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 16px;
-}
-
-svg#clouds {
-  position: fixed;
-  bottom: -160px;
-  left: -230px;
-  z-index: -10;
-  width: 1920px;
 }
 
 /* Responsive Styles */

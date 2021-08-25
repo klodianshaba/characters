@@ -1,6 +1,12 @@
+@import "src/assets/scss/partials/variables";
 .footer{
   text-align: center;
   position: fixed;
   bottom: 0;
   width: 100%;
+  background-color: white;
+  padding: 10px 0;
+  strong{
+    font-size: map_get($size, large);
+  }
 }

@@ -28,6 +28,10 @@
       text-align: left;
       padding: map_get($padding,left-right);
     }
+    .actions{
+      margin-left: auto;
+      display: grid;
+    }
   }
 }
 
