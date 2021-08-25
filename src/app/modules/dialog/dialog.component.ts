@@ -3,7 +3,6 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialo
 import { Overlay } from '@angular/cdk/overlay';
 import { BehaviorSubject} from "rxjs";
 import { ScreenService } from "../../core/services/screen/screen.service";
-import { ResizedEvent} from "angular-resize-event";
 import { DialogConfig } from "./models";
 
 @Component({
@@ -67,7 +66,7 @@ export class DialogComponent implements AfterViewInit{
     return { 'max-height':'calc(100vh - '+height+'px)','max-width':'100vw' };
   }
 
-  onResize(event:ResizedEvent){
+  onResize(event: any){
     let screen = this.screen.size();
     if(event.newHeight >= screen.y && event.newWidth >= screen.x){
       this.dialogElement.nativeElement.parentNode.classList.add('remove-border-dialog');

@@ -1,0 +1,79 @@
+
+@import "node_modules/@angular/material/theming";
+
+@function background($theme,$property_name) {
+  $background: map-get($theme, background);
+  @return(
+    map-get($background, $property_name)
+  );
+}
+
+@function color($theme, $property_name){
+  $foreground: map-get($theme, foreground);
+  @return(
+    map-get($foreground, $property_name)
+  );
+}
+
+@function primary($theme,$property_name:false){
+  $primary: map-get($theme, primary);
+  @if $property_name {
+    @return (
+      map-get($primary, $property_name)
+    );
+  }
+  @else{
+    @return (
+      mat-color($primary)
+    );
+  }
+}
+
+@function accent($theme,$property_name:false) {
+  $accent: map-get($theme, accent);
+  @if $property_name{
+    @return (
+    map-get($accent,$property_name)
+    )
+  }
+  @else{
+    @return (
+      mat-color($accent)
+    )
+  }
+}
+
+@function warn($theme,$property_name:false) {
+  $warn: map-get($theme, warn);
+  @if $property_name{
+    @return (
+      map-get($warn,$property_name)
+    )
+  }
+  @else{
+    @return (
+      mat-color($warn)
+    )
+  }
+}
+
+@function size($size , $property_name:false){
+  @if $property_name{
+    @return (
+      map-get($size ,$property_name)
+    )
+  }
+  @else{
+    @return (
+       map-get($size , middle)
+    )
+  }
+}
+
+@function padding($padding , $property_name){
+  @return (
+    map-get($padding ,$property_name)
+  )
+}
+
+
