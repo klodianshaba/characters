@@ -1,6 +1,6 @@
-@import "src/assets/scss/partials/variables";
-@import "src/assets/scss/partials/functions";
-@import "src/assets/scss/partials/mixins";
+@import "src/app/scss/partials/variables";
+@import "../../../../scss/partials/functions";
+@import "../../../../scss/partials/mixins";
 .add-character-content{
   width: 480px;
   .avatar-content{

@@ -13,10 +13,10 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
   onNavigateCharacters(): void{
-    this.router.navigate(['/characters']).then();
+    this.router.navigate(['/list']).then();
   }
   onNavigateAddCharacter(): void{
-    this.router.navigate(['/add-character']).then();
+    this.router.navigate(['/add']).then();
   }
   onGeta(): void{
     this.onNavigateCharacters();
