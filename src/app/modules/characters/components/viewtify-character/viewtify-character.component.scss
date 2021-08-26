@@ -6,8 +6,11 @@
   .avatar-content{
     display: flex;
     justify-content: space-between;
-    formify-input{
+    > div{
       width: calc(100% - 130px);
+    }
+    .createdAt{
+      padding-top: 5px;
     }
   }
   .flex-content{

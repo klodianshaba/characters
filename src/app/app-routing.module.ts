@@ -5,6 +5,7 @@ const routes: Routes = [
   { path: 'list', loadChildren: () => import('./modules/characters/characters.module').then(m => m.CharactersModule) },
   { path: 'add', loadChildren: () => import('./modules/add-character/add-character.module').then(m => m.AddCharacterModule) },
   { path: '', redirectTo: 'list', pathMatch: 'full' },
+  { path: '**', redirectTo: 'list', pathMatch: 'full' },
   ];
 
 @NgModule({

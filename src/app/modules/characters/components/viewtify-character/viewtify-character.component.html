@@ -3,7 +3,10 @@
   <div *ngIf="isAdd() || isEdit()">
     <form [formGroup]="formify.formGroup" #form="ngForm" (ngSubmit)="onSubmit()" [ngClass]="{'loading-form': formify.submit.loading}">
       <div class="avatar-content">
-        <formify-input formControlName="name" [fieldModel]="formify.field('name')"></formify-input>
+        <div>
+          <formify-input formControlName="name" [fieldModel]="formify.field('name')"></formify-input>
+          <div class="createdAt" *ngIf="isEdit()">{{ createdAt() }}</div>
+        </div>
         <app-avatar [src]="isEdit() ? character.avatar : null " [direction]="AvatarDirection.upload" [required]="formify.formGroup.get('avatar').invalid && form.submitted" (onPath)="onAvatarPathSelected($event)"></app-avatar>
       </div>
       <formify-select formControlName="role" [fieldModel]="formify.field('role')"></formify-select>

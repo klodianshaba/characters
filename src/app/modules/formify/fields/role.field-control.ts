@@ -8,9 +8,9 @@ export class RoleFieldControl extends FieldModel {
       label: 'Choose role',
       placeholder: 'role',
       autoComplete: 'off',
-      defaultValue: 'underwater',
+      defaultValue: 'underwater archaeologist',
       options: [
-        {text: 'Underwater Archaeologist', value: 'underwater'},
+        {text: 'Underwater Archaeologist', value: 'underwater archaeologist'},
         {text: 'Good Samaritan', value: 'good samaritan'},
         {text: 'Fastest', value: 'fastest'},
         {text: 'Sniper expert', value: 'sniper expert'},

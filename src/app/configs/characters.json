@@ -7,28 +7,13 @@
     "age": 22,
     "personality": "lover",
     "skills": [
-      {
-        "id": 1,
-        "value": "Angular"
-      },
-      {
-        "id": 2,
-        "value": "Typescript"
-      },
-      {
-        "id": 10,
-        "value": "Mysql"
-      },
-      {
-        "id": 20,
-        "value": "Vuejs"
-      },
-      {
-        "id": 21,
-        "value": "Html"
-      }
+      {"id": 1, "value": "Angular"},
+      {"id": 2, "value": "Typescript"},
+      {"id": 10, "value": "Mysql"},
+      {"id": 20, "value": "Vuejs"},
+      {"id": 21, "value": "Html"}
     ],
-    "date": "sdfsdf",
+    "createdAt": "Mon Aug 23 2021 13:09:07 GMT+0200 (Central European Summer Time)",
     "creator": "klodian",
     "avatar": "assets/images/characters/aladin.png"
   },
@@ -40,35 +25,16 @@
     "age": 25,
     "personality": "leader",
     "skills": [
-      {
-        "id": 3,
-        "value": "Nodejs"
-      },
-      {
-        "id": 4,
-        "value": "Php"
-      },
-      {
-        "id": 10,
-        "value": "Mysql"
-      },
-      {
-        "id": 20,
-        "value": "Vuejs"
-      },
-      {
-        "id": 21,
-        "value": "Html"
-      },
-      {
-        "id": 2,
-        "value": "Typescript"
-      }
+      {"id": 3, "value": "Nodejs"},
+      {"id": 4, "value": "Php"},
+      {"id": 10, "value": "Mysql"},
+      {"id": 20, "value": "Vuejs"},
+      {"id": 21, "value": "Html"},
+      {"id": 2, "value": "Typescript"}
     ],
-    "date": "weeee",
+    "createdAt": "Tue Aug 24 2021 14:05:07 GMT+0200 (Central European Summer Time)",
     "creator": "klodian",
     "avatar": "assets/images/characters/girl.png"
-
   },
   {
     "id": 3,
@@ -78,37 +44,26 @@
     "age": 22,
     "personality": "helper",
     "skills": [
-      {
-        "id": 2,
-        "value": "Typescript"
-      },
-      {
-        "id": 9,
-        "value": "Database"
-      }
+      {"id": 2, "value": "Typescript"},
+      {"id": 9, "value": "Database"}
     ],
-    "date": "sdfsdf",
+    "createdAt": "Wed Aug 25 2021 16:20:17 GMT+0200 (Central European Summer Time)",
     "creator": "klodian",
     "avatar": "assets/images/characters/Anime-girl.png"
-
   },
   {
     "id": 4,
     "name": "Robert",
-    "role": "bad samaritan",
+    "role": "sniper expert",
     "description": "just be bad with all people around and kill them",
     "age": 25,
     "personality": "leader",
     "skills": [
-      {
-        "id": 2,
-        "value": "Typescript"
-      }
+      {"id": 2, "value": "Typescript"}
     ],
-    "date": "weeee",
+    "createdAt": "Fri Aug 20 2021 17:02:09 GMT+0200 (Central European Summer Time)",
     "creator": "klodian",
     "avatar": "assets/images/characters/girl.png"
-
   },
   {
     "id": 5,
@@ -118,47 +73,19 @@
     "age": 22,
     "personality": "elegant",
     "skills": [
-      {
-        "id": 3,
-        "value": "Nodejs"
-      },
-      {
-        "id": 4,
-        "value": "Php"
-      },
-      {
-        "id": 2,
-        "value": "Typescript"
-      },
-      {
-        "id": 9,
-        "value": "Database"
-      },
-      {
-        "id": 10,
-        "value": "Mysql"
-      },
-      {
-        "id": 20,
-        "value": "Vuejs"
-      },
-      {
-        "id": 21,
-        "value": "Html"
-      },
-      {
-        "id": 50,
-        "value": "Css"
-      },
-      {
-        "id": 50,
-        "value": "pusher"
-      }
+      {"id": 3, "value": "Nodejs"},
+      {"id": 4, "value": "Php"},
+      {"id": 2, "value": "Typescript"},
+      {"id": 9, "value": "Database"},
+      {"id": 10, "value": "Mysql"},
+      {"id": 20, "value": "Vuejs"},
+      {"id": 21, "value": "Html"},
+      {"id": 50, "value": "Css"},
+      {"id": 50, "value": "pusher"}
     ],
-    "date": "sdfsdf",
+    "createdAt": "Sat Aug 21 2021 12:30:17 GMT+0200 (Central European Summer Time)",
     "creator": "klodian",
     "avatar": "assets/images/characters/oneeye.png"
-
   },
   {
     "id": 6,
@@ -168,31 +95,15 @@
     "age": 25,
     "personality": "hard worker",
     "skills": [
-      {
-        "id": 2,
-        "value": "Typescript"
-      },
-      {
-        "id": 9,
-        "value": "Database"
-      },
-      {
-        "id": 10,
-        "value": "Mysql"
-      },
-      {
-        "id": 20,
-        "value": "Vuejs"
-      },
-      {
-        "id": 21,
-        "value": "Html"
-      }
+      {"id": 2, "value": "Typescript"},
+      {"id": 9, "value": "Database"},
+      {"id": 10, "value": "Mysql"},
+      {"id": 20, "value": "Vuejs"},
+      {"id": 21, "value": "Html"}
     ],
-    "date": "weeee",
+    "createdAt": "Sun Aug 22 2021 11:15:50 GMT+0200 (Central European Summer Time)",
     "creator": "klodian",
     "avatar": "assets/images/characters/girl.png"
-
   },
   {
     "id": 7,
@@ -202,35 +113,16 @@
     "age": 22,
     "personality": "elegant",
     "skills": [
-      {
-        "id": 3,
-        "value": "Nodejs"
-      },
-      {
-        "id": 4,
-        "value": "Php"
-      },
-      {
-        "id": 2,
-        "value": "Typescript"
-      },
-      {
-        "id": 9,
-        "value": "Database"
-      },
-      {
-        "id": 10,
-        "value": "Mysql"
-      },
-      {
-        "id": 20,
-        "value": "Vuejs"
-      }
+      {"id": 3, "value": "Nodejs"},
+      {"id": 4, "value": "Php"},
+      {"id": 2, "value": "Typescript"},
+      {"id": 9, "value": "Database"},
+      {"id": 10, "value": "Mysql"},
+      {"id": 20, "value": "Vuejs"}
     ],
-    "date": "sdfsdf",
+    "createdAt": "Thu Aug 26 2021 10:25:09 GMT+0200 (Central European Summer Time)",
     "creator": "klodian",
     "avatar": "assets/images/characters/aladin.png"
-
   },
   {
     "id": 8,
@@ -240,95 +132,50 @@
     "age": 25,
     "personality": "lover",
     "skills": [
-      {
-        "id": 20,
-        "value": "Vuejs"
-      },
-      {
-        "id": 21,
-        "value": "Html"
-      },
-      {
-        "id": 50,
-        "value": "Css"
-      },
-      {
-        "id": 50,
-        "value": "pusher"
-      }
+      {"id": 20, "value": "Vuejs"},
+      {"id": 21, "value": "Html"},
+      {"id": 50, "value": "Css"},
+      {"id": 50, "value": "pusher"}
     ],
-    "date": "weeee",
+    "createdAt": "Thu Aug 26 2021 11:30:20 GMT+0200 (Central European Summer Time)",
     "creator": "klodian",
     "avatar": "assets/images/characters/girl.png"
-
   },
   {
     "id": 9,
     "name": "Michael",
-    "role": "bad samaritan",
+    "role": "sniper expert",
     "description": "just be bad with all people around and kill them",
     "age": 22,
     "personality": "leader",
     "skills": [
-      {
-        "id": 4,
-        "value": "Php"
-      },
-      {
-        "id": 10,
-        "value": "Mysql"
-      },
-      {
-        "id": 20,
-        "value": "Vuejs"
-      },
-      {
-        "id": 21,
-        "value": "Html"
-      }
+      {"id": 4, "value": "Php"},
+      {"id": 10, "value": "Mysql"},
+      {"id": 20, "value": "Vuejs"},
+      {"id": 21, "value": "Html"}
     ],
-    "date": "sdfsdf",
+    "createdAt": "Wed Aug 25 2021 15:05:07 GMT+0200 (Central European Summer Time)",
     "creator": "klodian",
     "avatar": "assets/images/characters/aladin.png"
-
   },
   {
     "id": 10,
     "name": "Thomas",
-    "role": "sniper expert",
-    "description": "Kill people around with sniper that are annoying girls",
+    "role": "good samaritan",
+    "description": "just be good with all people around and help them, give some money",
     "age": 25,
     "personality": "hard worker",
     "skills": [
-      {
-        "id": 4,
-        "value": "Php"
-      },
-      {
-        "id": 10,
-        "value": "Mysql"
-      },
-      {
-        "id": 20,
-        "value": "Vuejs"
-      },
-      {
-        "id": 21,
-        "value": "Html"
-      },
-      {
-        "id": 9,
-        "value": "Database"
-      },
-      {
-        "id": 10,
-        "value": "Mysql"
-      }
+      {"id": 4, "value": "Php"},
+      {"id": 10, "value": "Mysql"},
+      {"id": 20, "value": "Vuejs"},
+      {"id": 21, "value": "Html"},
+      {"id": 9, "value": "Database"},
+      {"id": 10, "value": "Mysql"}
     ],
-    "date": "weeee",
+    "createdAt": "Tue Aug 24 2021 20:30:07 GMT+0200 (Central European Summer Time)",
     "creator": "klodian",
     "avatar": "assets/images/characters/girl.png"
-
   }
 ]
 

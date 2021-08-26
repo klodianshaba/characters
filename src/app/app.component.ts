@@ -15,7 +15,8 @@ import {loadCharacters} from "./state/actions/characters.actions";
 export class AppComponent {
   title = 'characters';
   public characters: CharacterModel[] = (Characters as any).default;
-  constructor(private store: Store<State>) {
+  constructor(private store: Store<State>, private date: DateService) {
     this.store.dispatch(loadCharacters({characters: this.characters}))
+    console.log(this.date.toUTC());
   }
 }

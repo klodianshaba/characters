@@ -27,7 +27,7 @@ export class CharacterModel{
   creator: string ;
   avatar: string | ArrayBuffer;
 
-  constructor(private character?: CharacterInterface) {
+  constructor(private init?: CharacterInterface) {
     this.id = null;
     this.name = null;
     this.role = null;
@@ -38,6 +38,6 @@ export class CharacterModel{
     this.createdAt = null;
     this.creator = null;
     this.avatar = null;
-    Object.assign(this,character);
+    Object.assign(this,init);
   }
 }

@@ -54,17 +54,18 @@ export class ViewtifyCharacterComponent implements OnInit {
       new DescriptionFieldControl({}),
       new AgeFieldControl({}),
       new PersonalityFieldControl({}),
-      new SkillsFieldControl({}),
-      new DateFieldControl({}),
+      new SkillsFieldControl({defaultValue:[{value:'Angular'}]}),
+      new DateFieldControl({controlName:'createdAt'}),
       new NameFieldControl({controlName:'creator', placeholder:'Name of creator', label: 'Enter name of creator'}),
       new AvatarFieldControl({}),
     ],
     submit: { text: 'Save'}
   });
   constructor(private cdr: ChangeDetectorRef, private date: DateService, private store: Store<State>, private toastr: ToastrService ) {
-    this.formify.formGroup.patchValue({date: this.date.toUTC()})
+    this.formify.formGroup.patchValue({createdAt: this.date.toUTC()})
+    this.character = {...this.character, ...this.formify.formGroup.value}
     this.store.select(selectAllCharacters).subscribe(characters => {
-      if(characters){
+      if(characters) {
         this.characters = characters;
       }
     });
@@ -134,5 +135,9 @@ export class ViewtifyCharacterComponent implements OnInit {
       });
       this.onInserted.emit(true);
     }
+  }
+
+  createdAt(): string {
+    return  new Date(this.character.createdAt).toLocaleString();
   }
 }
